@@ -79,6 +79,16 @@
     <Text Include="agaricus-lepiota.data.txt" />
     <Text Include="agaricus-lepiota.names.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dataloader.cpp" />
+    <ClCompile Include="knn.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="dataloader.h" />
+    <ClInclude Include="knn.h" />
+    <ClInclude Include="mushroom.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

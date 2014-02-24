@@ -9,6 +9,6 @@
 
 data_Mushroom * loadData(std::string filename, data_Mushroom *arr, numInstances = MAX_INSTANCES);
 
-data_Mushroom loadInput(std::string filename);
+input_Mushroom loadInput(std::string filename);
 
 #endif

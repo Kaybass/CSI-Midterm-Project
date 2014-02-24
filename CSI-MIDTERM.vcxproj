@@ -81,11 +81,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dataloader.cpp" />
+    <ClCompile Include="functions.cpp" />
     <ClCompile Include="knn.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dataloader.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="knn.h" />
     <ClInclude Include="mushroom.h" />
   </ItemGroup>

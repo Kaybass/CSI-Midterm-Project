@@ -1,8 +1,8 @@
 /*
  *
+ * Mushroom structs and enum types based off of agaricus-lepiota.names
  *
- *
- *
+ * TODO: Properly weight enums
 */
 
 

@@ -84,12 +84,14 @@
     <ClCompile Include="functions.cpp" />
     <ClCompile Include="knn.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="timerSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dataloader.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="knn.h" />
     <ClInclude Include="mushroom.h" />
+    <ClInclude Include="timerSystem.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

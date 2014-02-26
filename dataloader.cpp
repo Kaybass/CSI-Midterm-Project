@@ -41,14 +41,19 @@ data_Mushroom  ** loadData(string filename, data_Mushroom * arr[], int numInstan
 						arr[i]->capShape = CSH_BELL;
 						break;
 					case 'c':
+						arr[i]->capShape = CSH_CONICAL;
 						break;
 					case 'x':
+						arr[i]->capShape = CSH_CONVEX;
 						break;
 					case 'f':
+						arr[i]->capShape = CSH_FLAT;
 						break;
 					case 'k':
+						arr[i]->capShape = CSH_KNOBBED;
 						break;
 					case 's':
+						arr[i]->capShape = CSH_SUNKEN;
 						break;
 					default:
 						break;

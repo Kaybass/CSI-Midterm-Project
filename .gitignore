@@ -14,3 +14,6 @@
 
 #visual studio solution files
 *.sln
+
+#debug folder
+debug/*

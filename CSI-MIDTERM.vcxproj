@@ -76,7 +76,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="agaricus-lepiota.data.txt" />
     <Text Include="agaricus-lepiota.names.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +91,9 @@
     <ClInclude Include="knn.h" />
     <ClInclude Include="mushroom.h" />
     <ClInclude Include="timerSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="agaricus-lepiota.data.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

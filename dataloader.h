@@ -7,7 +7,7 @@
 #include <string>
 #include "mushroom.h"
 
-data_Mushroom *  loadData(std::string filename, data_Mushroom *arr/*, numInstances = MAX_INSTANCES*/ /*/<<== WHERE IS THIS SUPPOSED TO BE CREATED?/*/);
+data_Mushroom  ** loadData(std::string filename, data_Mushroom * arr[], int numInstances = MAX_INSTANCES);
 
 input_Mushroom * loadInput(std::string filename);
 

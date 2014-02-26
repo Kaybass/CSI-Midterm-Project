@@ -86,8 +86,9 @@ enum _gill_size{
 enum _gill_color{
 	GC_BLACK,
 	GC_BROWN,
+	GC_BUFF,
 	GC_CHOCOLATE,
-	GC_GREY,
+	GC_GRAY,
 	GC_GREEN,
 	GC_ORANGE,
 	GC_PINK,

@@ -16,12 +16,8 @@ enum _cap_shape{
 	CSH_CONVEX  = 2,
 	CSH_FLAT    = 3,
 	CSH_KNOBBED = 4,
-<<<<<<< HEAD
-	CSH_SUNKEN  = 5
-=======
 	CSH_SUNKEN = 5,
 	CSH__COUNT = 6
->>>>>>> 2e6e6ebc55829053721017d40f724af27d8fcf1d
 };
 
 enum _cap_surface{
@@ -163,15 +159,9 @@ enum _stalk_color_below_ring{
 };
 
 enum _veil_type{
-<<<<<<< HEAD
 	VT_PARTIAL,
 	VT_UNIVERSAL,
 	VT_COUNT
-=======
-	VT_PARTIAL = 0,
-	VT_TAPERING = 1,
-	VT_COUNT = 2
->>>>>>> 2e6e6ebc55829053721017d40f724af27d8fcf1d
 };
 
 enum _veil_color{

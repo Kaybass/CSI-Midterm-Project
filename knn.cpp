@@ -46,7 +46,7 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 		curEdible =knownMushrooms[i]->isEdible;
 		if (tmpDist = 0)
 		{
-			return curEdible;
+			return !curEdible;
 		}
 		else
 		{

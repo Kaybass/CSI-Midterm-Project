@@ -7,8 +7,8 @@
 #include <string>
 #include "mushroom.h"
 
-data_Mushroom  ** loadData(std::string filename, int numInstances = MAX_INSTANCES);
+data_Mushroom  ** loadData(std::string filename, int numInstances);
 
-input_Mushroom * loadInput(std::string filename = "input1.txt");
+input_Mushroom * loadInput(std::string filename);
 
 #endif

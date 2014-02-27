@@ -6,9 +6,11 @@
 	If the unknown mushroom matches a mushroom exactly then it clames it found a match
 	If there is no match then it checks gainst the nearest 3 and 
 /*/
-bool doKNN(const input_Mushroom& myMushroom, data_Mushroom** knownMushrooms)
+bool doKNN(input_Mushroom myMushroom, data_Mushroom** knownMushrooms)
 {
-	data_Mushroom nearest1, nearest2, nearest3;
+	data_Mushroom	* nearest1 = NULL,
+					* nearest2 = NULL, 
+					* nearest3 = NULL;
 	float tmp, nearest1dist, nearest2dist, nearest3dist;
 	bool isEdible;
 
@@ -21,42 +23,36 @@ bool doKNN(const input_Mushroom& myMushroom, data_Mushroom** knownMushrooms)
 			cout << "MATCH FOUND";
 			return (knownMushrooms[i]->isEdible);
 		}
-		else if (tmp <= nearest1dist)
+		else if (nearest1dist != NULL && tmp <= nearest1dist)
 		{
-			if (nearest1.isEdible == false)
-				break;
 			nearest3dist = nearest2dist;
 			nearest3 = nearest2;
 			nearest2dist = nearest1dist;
 			nearest2 = nearest1;
 			nearest1dist = tmp;
-			nearest1 = *knownMushrooms[i];
+			nearest1 = knownMushrooms[i];
 		}
 		else if (tmp <= nearest2dist)
 		{
-			if (nearest2.isEdible == false)
-				break;
 			nearest3dist = nearest2dist;
 			nearest3 = nearest2;
 			nearest2dist = nearest1dist;
-			nearest2 = *knownMushrooms[i];
+			nearest2 = knownMushrooms[i];
 		}
 		else if (tmp <= nearest3dist)
 		{
-			if (nearest3.isEdible == false)
-				break;
 			nearest3dist = nearest2dist;
-			nearest3 = *knownMushrooms[i];
+			nearest3 = knownMushrooms[i];
 		}
 	}
 	if( (nearest1dist < ((nearest2dist + nearest3dist)/2)- 10) && (nearest1dist != nearest2dist) )
 	{
-		isEdible = nearest1.isEdible;
+		isEdible = nearest1->isEdible;
 	}
 	else
 	{
 		/*/If 2 or more have a value of false (1)/*/
-		if (((int(nearest1.isEdible) + int(nearest2 .isEdible) + int(nearest3.isEdible))/2) >= 1)
+		if (((int(nearest1->isEdible) + int(nearest2->isEdible) + int(nearest3->isEdible))/2) >= 1)
 			isEdible = false;
 		
 		else
@@ -92,7 +88,7 @@ bool getContinue()
 		{
 			valInput = false;
 			cout << "I'm sorry, your input was invalid."
-				<< "Please use \"Y\" for yes and \"N\" for no.\N";
+				<< "Please use \"Y\" for yes and \"N\" for no.\n";
 		}
 	}while (!valInput);
 	return ans;

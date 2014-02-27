@@ -1,3 +1,6 @@
+#ifndef __HEADER__
+#define __HEADER__
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -14,8 +17,10 @@ enum _options {
 	OPT_COUNT
 };
 
-bool doKNN(const input_Mushroom& checkMushrooms, data_Mushroom**  knownMushrooms);
+bool doKNN(input_Mushroom checkMushrooms, data_Mushroom**  knownMushrooms);
 
 bool getContinue();
 
 _options getOption();
+
+#endif

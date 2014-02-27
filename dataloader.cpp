@@ -6,7 +6,6 @@ using namespace std;
 data_Mushroom  ** loadData(string filename, int numInstances = MAX_INSTANCES)
 {
 	ifstream fInput;
-	int numInstances;
 
 	fInput.open(filename);
 
@@ -582,7 +581,6 @@ data_Mushroom  ** loadData(string filename, int numInstances = MAX_INSTANCES)
 input_Mushroom * loadInput(std::string filename = "input1.txt")
 {
 	ifstream fInput;
-	int numInstances;
 
 	fInput.open(filename);
 

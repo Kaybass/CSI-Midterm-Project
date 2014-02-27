@@ -17,8 +17,7 @@ void main()
 
 	knownMushrooms = new data_Mushroom*[MAX_INSTANCES];
 
-	loadData("agaricus-lepiota.data.csv", knownMushrooms);
-	loadInput();
+	knownMushrooms = loadData("agaricus-lepiota.data.csv", MAX_INSTANCES);
 
 	do
 	{

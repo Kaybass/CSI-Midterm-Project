@@ -13,52 +13,57 @@
 #ifndef __MUSHROOM__
 #define __MUSHROOM__
 
+
+/*
+ * Traits that show edibility are closer to 1 and traits that show non-edibility are closer to 9
+*/
+
 enum _cap_shape{
 
-	CSH_BELL    = 0,
-	CSH_CONICAL = 1,
-	CSH_CONVEX  = 2,
-	CSH_FLAT    = 3,
-	CSH_KNOBBED = 4,
+	CSH_BELL    = 5,
+	CSH_CONICAL = 5,
+	CSH_CONVEX  = 5,
+	CSH_FLAT    = 5,
+	CSH_KNOBBED = 5,
 	CSH_SUNKEN  = 5
 };
 
 enum _cap_surface{
 
-	CSU_FIBROUS = 0,
-	CSU_GROOVES = 1,
-	CSU_SCALY   = 2,
-	CSU_SMOOTH  = 3
+	CSU_FIBROUS = 5,
+	CSU_GROOVES = 5,
+	CSU_SCALY   = 5,
+	CSU_SMOOTH  = 5
 };
 
 enum _cap_color{
-	CC_BROWN    = 0,
+	CC_BROWN    = 1,
 	CC_BUFF     = 1,
-	CC_CINNAMON = 2,
-	CC_GRAY     = 3,
-	CC_GREEN    = 4, 
-	CC_PINK     = 5,
-	CC_PURPLE   = 6,
-	CC_RED      = 7,
-	CC_WHITE    = 8,
-	CC_YELLOW   = 9
+	CC_CINNAMON = 1,
+	CC_GRAY     = 1,
+	CC_GREEN    = 1, 
+	CC_PINK     = 1,
+	CC_PURPLE   = 1,
+	CC_RED      = 1,
+	CC_WHITE    = 9,
+	CC_YELLOW   = 1
 };
 
 enum _bruises{
-	B_BRUISED     = 0,
-	B_NOT_BRUISED = 1
+	B_BRUISED     = 5,
+	B_NOT_BRUISED = 5
 };
 
 enum _odor{
-	O_ALMOND   = 0,
+	O_ALMOND   = 1,
 	O_ANISE    = 1,
-	O_CREOSOTE = 2,
-	O_FISHY    = 3,
-	O_FOUL     = 4,
-	O_MUSTY    = 5,
-	O_NONE     = 6,
-	O_PUNGENT  = 7,
-	O_SPICE    = 8
+	O_CREOSOTE = 9,
+	O_FISHY    = 9,
+	O_FOUL     = 9,
+	O_MUSTY    = 9,
+	O_NONE     = 5,
+	O_PUNGENT  = 9,
+	O_SPICE    = 9
 };
 
 enum _gill_attachment{
@@ -69,142 +74,142 @@ enum _gill_attachment{
 };
 
 enum _gill_spacing{
-	GSP_CLOSE   = 0,
-	GSP_CROWDED = 1,
-	GSP_DISTANT = 2
+	GSP_CLOSE   = 5,
+	GSP_CROWDED = 5,
+	GSP_DISTANT = 5
 };
 
 enum _gill_size{
-	GSI_BROAD  = 0,
-	GSI_NARROW = 1
+	GSI_BROAD  = 5,
+	GSI_NARROW = 5
 };
 
 enum _gill_color{
-	GC_BLACK     = 0,
-	GC_BROWN     = 1,
-	GC_BUFF      = 2,
-	GC_CHOCOLATE = 3,
-	GC_GRAY      = 4,
+	GC_BLACK     = 5,
+	GC_BROWN     = 5,
+	GC_BUFF      = 5,
+	GC_CHOCOLATE = 5,
+	GC_GRAY      = 5,
 	GC_GREEN     = 5,
-	GC_ORANGE    = 6,
-	GC_PINK      = 7,
-	GC_PURPLE    = 8,
-	GC_RED       = 9,
-	GC_WHITE     = 10,
-	GC_YELLOW    = 11
+	GC_ORANGE    = 5,
+	GC_PINK      = 5,
+	GC_PURPLE    = 5,
+	GC_RED       = 5,
+	GC_WHITE     = 5,
+	GC_YELLOW    = 5
 };
 
 enum _stalk_shape{
-	SS_ENLARGING = 0,
-	SS_TAPERING  = 1
+	SS_ENLARGING = 5,
+	SS_TAPERING  = 5
 };
 
 enum _stalk_root{
-	SR_BULBOUS     = 0,
-	SR_CLUB        = 1,
-	SR_CUP         = 2,
-	SR_EQUAL       = 3,
-	SR_RHIZOMORPHS = 4,
+	SR_BULBOUS     = 5,
+	SR_CLUB        = 5,
+	SR_CUP         = 5,
+	SR_EQUAL       = 5,
+	SR_RHIZOMORPHS = 5,
 	SR_ROOTED      = 5,
-	SR_MISSING     = 6
+	SR_MISSING     = 5
 };
 
 enum _stalk_surface_above_ring{
-	SSAR_FIBROUS = 0,
-	SSAR_SCALLY  = 1,
-	SSAR_SILKY   = 2,
-	SSAR_SMOOTH  = 3
+	SSAR_FIBROUS = 1,
+	SSAR_SCALLY  = 9,
+	SSAR_SILKY   = 1,
+	SSAR_SMOOTH  = 1
 };
 
 enum _stalk_surface_below_ring{
-	SSBR_FIBROUS = 0,
-	SSBR_SCALLY  = 1,
-	SSBR_SILKY   = 2,
-	SSBR_SMOOTH  = 3
+	SSBR_FIBROUS = 5,
+	SSBR_SCALLY  = 5,
+	SSBR_SILKY   = 5,
+	SSBR_SMOOTH  = 5
 };
 
 enum _stalk_color_above_ring{
-	SCAR_BROWN    = 0,
-	SCAR_BUFF     = 1,
-	SCAR_CINNAMON = 2,
-	SCAR_GRAY     = 3,
-	SCAR_ORANGE   = 4, 
+	SCAR_BROWN    = 1,
+	SCAR_BUFF     = 5,
+	SCAR_CINNAMON = 5,
+	SCAR_GRAY     = 5,
+	SCAR_ORANGE   = 5, 
 	SCAR_PINK     = 5,
-	SCAR_RED      = 6,
-	SCAR_WHITE    = 7,
-	SCAR_YELLOW   = 8
+	SCAR_RED      = 5,
+	SCAR_WHITE    = 5,
+	SCAR_YELLOW   = 5
 };
 
 enum _stalk_color_below_ring{
-	SCBR_BROWN    = 0,
-	SCBR_BUFF     = 1,
-	SCBR_CINNAMON = 2,
-	SCBR_GRAY     = 3,
-	SCBR_ORANGE   = 4, 
+	SCBR_BROWN    = 5,
+	SCBR_BUFF     = 5,
+	SCBR_CINNAMON = 5,
+	SCBR_GRAY     = 5,
+	SCBR_ORANGE   = 5, 
 	SCBR_PINK     = 5,
-	SCBR_RED      = 6,
-	SCBR_WHITE    = 7,
-	SCBR_YELLOW   = 8
+	SCBR_RED      = 5,
+	SCBR_WHITE    = 5,
+	SCBR_YELLOW   = 5
 };
 
 enum _veil_type{
-	VT_PARTIAL   = 0,
-	VT_UNIVERSAL = 0
+	VT_PARTIAL   = 5,
+	VT_UNIVERSAL = 5
 };
 
 enum _veil_color{
-	VC_BROWN  = 0,
-	VC_ORANGE = 1,
-	VC_WHITE  = 2,
-	VC_YELLOW = 3
+	VC_BROWN  = 5,
+	VC_ORANGE = 5,
+	VC_WHITE  = 5,
+	VC_YELLOW = 5
 };
 
 enum _ring_number{
-	RN_NONE = 0,
-	RN_ONE  = 1,
-	RN_TWO  = 2
+	RN_NONE = 5,
+	RN_ONE  = 5,
+	RN_TWO  = 5
 };
 
 enum _ring_type{
-	RT_COBWEBBY   = 0,
-	RT_EVANESCENT = 1,
-	RT_FLARING    = 2,
-	RT_LARGE      = 3,
-	RT_NONE       = 4,
+	RT_COBWEBBY   = 5,
+	RT_EVANESCENT = 5,
+	RT_FLARING    = 5,
+	RT_LARGE      = 5,
+	RT_NONE       = 5,
 	RT_PENDANT    = 5,
-	RT_SHEATHING  = 6,
-	RT_ZONE       = 7
+	RT_SHEATHING  = 5,
+	RT_ZONE       = 5
 };
 
 enum _spore_print_color{
-	SPC_BLACK     = 0,
+	SPC_BLACK     = 1,
 	SPC_BROWN     = 1,
-	SPC_BUFF      = 2,
-	SPC_CHOCOLATE = 3,
-	SPC_GREEN     = 4,
-	SPC_ORANGE    = 5,
-	SPC_PURPLE    = 6,
-	SPC_WHITE     = 7,
-	SPC_YELLOW    = 8
+	SPC_BUFF      = 1,
+	SPC_CHOCOLATE = 1,
+	SPC_GREEN     = 9,
+	SPC_ORANGE    = 1,
+	SPC_PURPLE    = 1,
+	SPC_WHITE     = 1,
+	SPC_YELLOW    = 1
 };
 
 enum _population{
-	P_ABUNDANT  = 0,
-	P_CLUSTERED = 1,
-	P_NUMEROUS  = 2,
-	P_SCATTERED = 3,
-	P_SEVERAL   = 4,
-	P_SOLITARY  = 5
+	P_ABUNDANT  = 1,
+	P_CLUSTERED = 9,
+	P_NUMEROUS  = 1,
+	P_SCATTERED = 1,
+	P_SEVERAL   = 1,
+	P_SOLITARY  = 1
 };
 
 enum _habitat{
-	H_GRASSES = 0,
-	H_LEAVES  = 1,
-	H_MEADOW  = 2,
-	H_PATHS   = 3,
-	H_URBAN   = 4,
-	H_WASTE   = 5,
-	H_WOODS   = 6
+	H_GRASSES = 1,
+	H_LEAVES  = 9,
+	H_MEADOW  = 1,
+	H_PATHS   = 1,
+	H_URBAN   = 1,
+	H_WASTE   = 1,
+	H_WOODS   = 1
 };
 
 typedef struct{

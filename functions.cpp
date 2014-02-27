@@ -10,7 +10,7 @@ int timeAlgorithm(std::string filename)
 
 	TimerSystem timer;
 
-	int instances = MAX_INSTANCES;
+	int instances = LOW_INSTANCES;
 	
 	timer.startClock();
 

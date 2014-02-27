@@ -1,10 +1,14 @@
-/*
- *
- * Mushroom structs and enum types based off of agaricus-lepiota.names
- *
- * TODO: Properly weight enums
-*/
-
+/* ***       Author:  Team Same
+     *  Last Update:  February 25, 2014
+     *        Class:  CSI-281
+     *     Filename:  
+     *			mushroom.h
+     *  Description:
+     *			contains types for mushrooms
+     *  
+     *  Certification of Authenticity:
+     *     I certify that this assignment is entirely our own work.
+     **********************************************************************/
 
 #ifndef __MUSHROOM__
 #define __MUSHROOM__

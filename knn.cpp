@@ -45,6 +45,12 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 	{
 		temp = euclidDistance(myMushroom,knownMushrooms[i]);
 	}
+
+
+
+	delete [] dArr;
+	delete [] iArr;
+	delete [] indArr;
 	
 	return bP;
 }

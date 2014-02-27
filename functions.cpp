@@ -9,16 +9,18 @@ int timeAlgorithm(std::string filename)
 	cout.precision(16);
 
 	TimerSystem timer;
+
+	int instances = MAX_INSTANCES;
 	
 	timer.startClock();
 
 	data_Mushroom** knownMushrooms = NULL;
 	input_Mushroom* checkMushroom = NULL;
 
-	knownMushrooms = loadData("agaricus-lepiota.data.csv", MAX_INSTANCES);
+	knownMushrooms = loadData("agaricus-lepiota.data.csv", instances);
 	checkMushroom  = loadInput(filename);
 
-	bool bP = isPoison(checkMushroom, knownMushrooms, MAX_INSTANCES);
+	bool bP = isPoison(checkMushroom, knownMushrooms, instances);
 
 	cout << timer.getTime() << " seconds elapsed.\n";
 
@@ -28,6 +30,15 @@ int timeAlgorithm(std::string filename)
 		cout << "The mushroom is edible!\n";
 
 	system("pause");
+
+	for(int i = 0; i < instances; i++)
+	{
+		delete knownMushrooms[i];
+		knownMushrooms[i] = NULL;
+	}
+
+	delete [] knownMushrooms;
+	delete    checkMushroom;
 
 	return 1;
 }

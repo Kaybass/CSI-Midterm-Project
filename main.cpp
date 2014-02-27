@@ -3,6 +3,7 @@
 #include "dataloader.h"
 #include "Header.h"
 #include "knn.h"
+#include "mushroom.h"
 
 using namespace std;
 
@@ -10,6 +11,15 @@ void main()
 {
 	bool cont;
 	_options choice;
+
+	data_Mushroom** knownMushrooms = NULL;
+	input_Mushroom** checkMushrooms = NULL;
+
+	knownMushrooms = new data_Mushroom*[MAX_INSTANCES];
+
+	loadData("agaricus-lepiota.data.csv", knownMushrooms);
+	loadInput();
+
 	do
 	{
 		choice = getOption();
@@ -19,4 +29,6 @@ void main()
 		// out put likely hood of being poisonous
 		cont = getContinue();
 	} while(cont);
+	delete [] knownMushrooms;
+	delete [] checkMushrooms;
 }

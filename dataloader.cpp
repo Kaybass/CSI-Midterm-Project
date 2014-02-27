@@ -592,6 +592,10 @@ input_Mushroom * loadInput(std::string filename = "input1.txt")
 
 	if(fInput.good())
 	{
+		getline(fInput,tmp);
+
+		mush->kNum = atoi(tmp.c_str());
+
 		getline(fInput, tmp);
 
 		for(int j = 0; j < 43; j = j + 2)

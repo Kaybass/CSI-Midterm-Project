@@ -34,19 +34,24 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 
 	bool bP = true;
 
-	double curDist, tmpDist;
+	double curDist = 0, tmpDist = 0;
 	bool curEdible, tmpEdible;
 	int poi = 0, edib = 0, size;
 	size = myMushroom->kNum;
 	near_Mushrooms * nArr = new near_Mushrooms[size];
 
+	for (int h = 0; h < size; h++)
+	{
+		nArr[h].distance = _I32_MAX;
+	}
+
 	for(int i = 0; i < length; i++)
 	{
 		curDist = euclidDistance(myMushroom,knownMushrooms[i]);
-		curEdible =knownMushrooms[i]->isEdible;
-		if (tmpDist = 0)
+		curEdible = knownMushrooms[i]->isEdible;
+		if (curDist == 0)
 		{
-			return !curEdible;
+		//	return !curEdible;
 		}
 		else
 		{

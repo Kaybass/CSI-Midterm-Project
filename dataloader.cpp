@@ -593,7 +593,7 @@ ifstream fInput;
 	{
 		getline(fInput, tmp);
 
-		for(int j = 0; j < 45; j = j + 2)
+		for(int j = 0; j < 43; j = j + 2)
 		{
 			switch(j)
 			{

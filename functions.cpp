@@ -1,10 +1,16 @@
 #include "Header.h"
 
 
+/*/
+	Compares the value of an unknow mushroom agains known mushrooms
+	If the unknown mushroom matches a mushroom exactly then it clames it found a match
+	If there is no match then it checks gainst the nearest 3 and 
+/*/
 bool doKNN(const input_Mushroom& myMushroom, data_Mushroom** knownMushrooms)
 {
 	data_Mushroom nearest1, nearest2, nearest3;
 	float tmp, nearest1dist, nearest2dist, nearest3dist;
+	bool isEdible;
 
 	/*/Get the 3 nearest neighbors/*/
 	for (int i = 0; i < sizeof(knownMushrooms); i++)
@@ -17,6 +23,8 @@ bool doKNN(const input_Mushroom& myMushroom, data_Mushroom** knownMushrooms)
 		}
 		else if (tmp <= nearest1dist)
 		{
+			if (nearest1.isEdible == false)
+				break;
 			nearest3dist = nearest2dist;
 			nearest3 = nearest2;
 			nearest2dist = nearest1dist;
@@ -26,6 +34,8 @@ bool doKNN(const input_Mushroom& myMushroom, data_Mushroom** knownMushrooms)
 		}
 		else if (tmp <= nearest2dist)
 		{
+			if (nearest2.isEdible == false)
+				break;
 			nearest3dist = nearest2dist;
 			nearest3 = nearest2;
 			nearest2dist = nearest1dist;
@@ -33,12 +43,33 @@ bool doKNN(const input_Mushroom& myMushroom, data_Mushroom** knownMushrooms)
 		}
 		else if (tmp <= nearest3dist)
 		{
+			if (nearest3.isEdible == false)
+				break;
 			nearest3dist = nearest2dist;
 			nearest3 = *knownMushrooms[i];
 		}
 	}
+	if( (nearest1dist < ((nearest2dist + nearest3dist)/2)- 10) && (nearest1dist != nearest2dist) )
+	{
+		isEdible = nearest1.isEdible;
+	}
+	else
+	{
+		/*/If 2 or more have a value of false (1)/*/
+		if (((int(nearest1.isEdible) + int(nearest2 .isEdible) + int(nearest3.isEdible))/2) >= 1)
+			isEdible = false;
+		
+		else
+			isEdible = true;
+
+	}
+	return isEdible;
 }
 
+
+/*/
+	Checks to see if the user wants to continue.
+/*/
 bool getContinue()
 {
 	string answer;
@@ -66,6 +97,8 @@ bool getContinue()
 	}while (!valInput);
 	return ans;
 }
+
+
 
 _options getOption()
 {

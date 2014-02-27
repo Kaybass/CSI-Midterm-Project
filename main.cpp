@@ -15,8 +15,6 @@ void main()
 	data_Mushroom** knownMushrooms = NULL;
 	input_Mushroom** checkMushrooms = NULL;
 
-	knownMushrooms = new data_Mushroom*[MAX_INSTANCES];
-
 	knownMushrooms = loadData("agaricus-lepiota.data.csv", MAX_INSTANCES);
 
 	do

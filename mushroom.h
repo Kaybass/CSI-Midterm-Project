@@ -233,6 +233,7 @@ typedef struct{
 
 typedef struct{
 
+	int kNum;
 	_cap_shape capShape;
 	_cap_surface capSurface;
 	_cap_color capColor;

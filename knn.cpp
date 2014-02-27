@@ -31,26 +31,79 @@ double euclidDistance(input_Mushroom *myMushroom, data_Mushroom *knownMushrooms 
 
 bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int length)
 {
+	/*/ I DON'T THINK WE NEED THESE /*/
+	/*
 	data_Mushroom ** dArr = new data_Mushroom*[myMushroom->kNum];
 
 	double* iArr = new double[myMushroom->kNum];
 
 	int*    indArr = new int[myMushroom->kNum];
+	*/
+	
+	near_Mushrooms ** nArr = new near_Mushrooms*[myMushroom->kNum];
 
 	bool bP = true;
 
-	double temp = 0;
+	double curDist, tmpDist;
+	bool curEdible, tmpEdible;
+	int poi = 0, edib = 0;
 
 	for(int i = 0; i < length; i++)
 	{
-		temp = euclidDistance(myMushroom,knownMushrooms[i]);
+		curDist = euclidDistance(myMushroom,knownMushrooms[i]);
+		curEdible =knownMushrooms[i]->isEdible;
+		if (tmpDist = 0)
+		{
+			return curEdible;
+		}
+		else
+		{
+			for(int j = 0; j < myMushroom->kNum; j++)
+			{
+				if (nArr[j]->distance > curDist)
+				{
+					tmpDist = nArr[j]->distance;
+					tmpEdible = nArr[j]->isEdible;
+					nArr[j]->distance = curDist;
+					nArr[j]->isEdible = curEdible;
+					curDist = tmpDist;
+					curEdible = tmpEdible;
+				}
+				/*/ ONLY RUN IF EDIBLE /*/
+				else if (nArr[j]->distance == curDist && nArr[j]->isEdible)
+				{
+					tmpDist = nArr[j]->distance;
+					tmpEdible = nArr[j]->isEdible;
+					nArr[j]->distance = curDist;
+					nArr[j]->isEdible = curEdible;
+					curDist = tmpDist;
+					curEdible = tmpEdible;
+				}
+			}
+		}
 	}
 
+	/*/ get mode poison value /*/
 
+	for (int k = 0; k < myMushroom->kNum; k++)
+	{
+		if (nArr[k]->isEdible)
+			++edib;
+		else
+			++poi;
+	}
 
+	if (edib > poi)
+		bP = false;
+
+	else
+		bP = true;
+
+	delete [] * nArr;
+	/*
 	delete [] dArr;
 	delete [] iArr;
 	delete [] indArr;
-	
+	*/
 	return bP;
 }

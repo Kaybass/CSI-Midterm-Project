@@ -16,6 +16,8 @@
 #include <math.h>
 #include "mushroom.h"
 
+using namespace std;
+
 /*
  *	Pre    : Have mushroom
  *	Purpose: Find if mushroom has poison

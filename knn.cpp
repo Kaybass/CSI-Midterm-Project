@@ -35,9 +35,11 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 
 	double* iArr = new double[myMushroom->kNum];
 
-	bool bP;
+	int*    indArr = new int[myMushroom->kNum];
 
-	int temp = 0;
+	bool bP = true;
+
+	double temp = 0;
 
 	for(int i = 0; i < length; i++)
 	{

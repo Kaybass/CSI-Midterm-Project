@@ -24,6 +24,6 @@ float distance( input_Mushroom myMushroom, data_Mushroom knownMushrooms )
 				pow(float(myMushroom.sporePrintColor - knownMushrooms.sporePrintColor), 2) +
 				pow(float(myMushroom.population - knownMushrooms.population), 2) +
 				pow(float(myMushroom.habitat - knownMushrooms.habitat), 2))
-				, float(0.5)
+				,   float(0.5)
 		);
 }

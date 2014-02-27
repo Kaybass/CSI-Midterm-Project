@@ -574,12 +574,14 @@ data_Mushroom  ** loadData(string filename, int numInstances = MAX_INSTANCES)
 		}
 	}
 
+	fInput.close();
+
 	return arr;
 }
 
 input_Mushroom * loadInput(std::string filename = "input1.txt")
 {
-ifstream fInput;
+	ifstream fInput;
 	int numInstances;
 
 	fInput.open(filename);
@@ -601,22 +603,22 @@ ifstream fInput;
 				switch(tmp[j])
 				{
 				case 'b':
-					arr[i]->capShape = CSH_BELL;
+					mush->capShape = CSH_BELL;
 					break;
 				case 'c':
-					arr[i]->capShape = CSH_CONICAL;
+					mush->capShape = CSH_CONICAL;
 					break;
 				case 'x':
-					arr[i]->capShape = CSH_CONVEX;
+					mush->capShape = CSH_CONVEX;
 					break;
 				case 'f':
-					arr[i]->capShape = CSH_FLAT;
+					mush->capShape = CSH_FLAT;
 					break;
 				case 'k':
-					arr[i]->capShape = CSH_KNOBBED;
+					mush->capShape = CSH_KNOBBED;
 					break;
 				case 's':
-					arr[i]->capShape = CSH_SUNKEN;
+					mush->capShape = CSH_SUNKEN;
 					break;
 				default:
 					break;
@@ -626,16 +628,16 @@ ifstream fInput;
 				switch(tmp[j])
 				{
 				case 'f':
-					arr[i]->capSurface = CSU_FIBROUS;
+					mush->capSurface = CSU_FIBROUS;
 					break;
 				case 'g':
-					arr[i]->capSurface = CSU_GROOVES;
+					mush->capSurface = CSU_GROOVES;
 					break;
 				case 'y':
-					arr[i]->capSurface = CSU_SCALY;
+					mush->capSurface = CSU_SCALY;
 					break;
 				case 's':
-					arr[i]->capSurface = CSU_SMOOTH;
+					mush->capSurface = CSU_SMOOTH;
 					break;
 				default:
 					break;
@@ -645,34 +647,34 @@ ifstream fInput;
 				switch(tmp[j])
 				{
 				case 'n':
-					arr[i]->capColor = CC_BROWN;
+					mush->capColor = CC_BROWN;
 					break;
 				case 'b':
-					arr[i]->capColor = CC_BUFF;
+					mush->capColor = CC_BUFF;
 					break;
 				case 'c':
-					arr[i]->capColor = CC_CINNAMON;
+					mush->capColor = CC_CINNAMON;
 					break;
 				case 'g':
-					arr[i]->capColor = CC_GRAY;
+					mush->capColor = CC_GRAY;
 					break;
 				case 'r':
-					arr[i]->capColor = CC_GREEN;
+					mush->capColor = CC_GREEN;
 					break;
 				case 'p':
-					arr[i]->capColor = CC_PINK;
+					mush->capColor = CC_PINK;
 					break;
 				case 'u':
-					arr[i]->capColor = CC_PURPLE;
+					mush->capColor = CC_PURPLE;
 					break;
 				case 'e':
-					arr[i]->capColor = CC_RED;
+					mush->capColor = CC_RED;
 					break;
 				case 'w':
-					arr[i]->capColor = CC_WHITE;
+					mush->capColor = CC_WHITE;
 					break;
 				case 'y':
-					arr[i]->capColor = CC_YELLOW;
+					mush->capColor = CC_YELLOW;
 					break;
 				default:
 					break;
@@ -682,10 +684,10 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 't':
-					arr[i]->bruises = B_BRUISED;
+					mush->bruises = B_BRUISED;
 					break;
 				case 'f':
-					arr[i]->bruises = B_NOT_BRUISED;
+					mush->bruises = B_NOT_BRUISED;
 				default:
 					break;
 				}
@@ -694,31 +696,31 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'a':
-					arr[i]->odor = O_ALMOND;
+					mush->odor = O_ALMOND;
 					break;
 				case 'l':
-					arr[i]->odor = O_ANISE;
+					mush->odor = O_ANISE;
 					break;
 				case 'c':
-					arr[i]->odor = O_CREOSOTE;
+					mush->odor = O_CREOSOTE;
 					break;
 				case 'y':
-					arr[i]->odor = O_FISHY;
+					mush->odor = O_FISHY;
 					break;
 				case 'f':
-					arr[i]->odor = O_FOUL;
+					mush->odor = O_FOUL;
 					break;
 				case 'm':
-					arr[i]->odor = O_MUSTY;
+					mush->odor = O_MUSTY;
 					break;
 				case 'n':
-					arr[i]->odor = O_NONE;
+					mush->odor = O_NONE;
 					break;
 				case 'p':
-					arr[i]->odor = O_PUNGENT;
+					mush->odor = O_PUNGENT;
 					break;
 				case 's':
-					arr[i]->odor = O_SPICE;
+					mush->odor = O_SPICE;
 					break;
 				default:
 					break;
@@ -728,16 +730,16 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'a':
-					arr[i]->gillAttachment = GA_ATTACHED;
+					mush->gillAttachment = GA_ATTACHED;
 					break;
 				case 'd':
-					arr[i]->gillAttachment = GA_DECENDING;
+					mush->gillAttachment = GA_DECENDING;
 					break;
 				case 'f':
-					arr[i]->gillAttachment = GA_FREE;
+					mush->gillAttachment = GA_FREE;
 					break;
 				case 'n':
-					arr[i]->gillAttachment = GA_NOTCHED;
+					mush->gillAttachment = GA_NOTCHED;
 					break;
 				default:
 					break;
@@ -747,13 +749,13 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'c':
-					arr[i]->gillSpacing = GSP_CLOSE;
+					mush->gillSpacing = GSP_CLOSE;
 					break;
 				case 'w':
-					arr[i]->gillSpacing = GSP_CROWDED;
+					mush->gillSpacing = GSP_CROWDED;
 					break;
 				case 'd':
-					arr[i]->gillSpacing = GSP_DISTANT;
+					mush->gillSpacing = GSP_DISTANT;
 					break;
 				default:
 					break;
@@ -763,10 +765,10 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'b':
-					arr[i]->gillSize = GSI_BROAD;
+					mush->gillSize = GSI_BROAD;
 					break;
 				case 'n':
-					arr[i]->gillSize = GSI_NARROW;
+					mush->gillSize = GSI_NARROW;
 					break;
 				default:
 					break;
@@ -776,37 +778,37 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'k':
-					arr[i]->gillColor = GC_BLACK;
+					mush->gillColor = GC_BLACK;
 					break;
 				case 'n':
-					arr[i]->gillColor = GC_BROWN;
+					mush->gillColor = GC_BROWN;
 					break;
 				case 'b':
-					arr[i]->gillColor = GC_BUFF;
+					mush->gillColor = GC_BUFF;
 					break;
 				case 'g':
-					arr[i]->gillColor = GC_GRAY;
+					mush->gillColor = GC_GRAY;
 					break;
 				case 'r':
-					arr[i]->gillColor = GC_GREEN;
+					mush->gillColor = GC_GREEN;
 					break;
 				case 'o':
-					arr[i]->gillColor = GC_ORANGE;
+					mush->gillColor = GC_ORANGE;
 					break;
 				case 'p':
-					arr[i]->gillColor = GC_PINK;
+					mush->gillColor = GC_PINK;
 					break;
 				case 'u':
-					arr[i]->gillColor = GC_PURPLE;
+					mush->gillColor = GC_PURPLE;
 					break;
 				case 'e':
-					arr[i]->gillColor = GC_RED;
+					mush->gillColor = GC_RED;
 					break;
 				case 'w':
-					arr[i]->gillColor = GC_WHITE;
+					mush->gillColor = GC_WHITE;
 					break;
 				case 'y':
-					arr[i]->gillColor = GC_YELLOW;
+					mush->gillColor = GC_YELLOW;
 					break;
 				default:
 					break;
@@ -816,10 +818,10 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'e':
-					arr[i]->stalkShape = SS_ENLARGING;
+					mush->stalkShape = SS_ENLARGING;
 					break;
 				case 't':
-					arr[i]->stalkShape = SS_TAPERING;
+					mush->stalkShape = SS_TAPERING;
 					break;
 				default:
 					break;
@@ -829,25 +831,25 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'b':
-					arr[i]->stalkRoot = SR_BULBOUS;
+					mush->stalkRoot = SR_BULBOUS;
 					break;
 				case 'c':
-					arr[i]->stalkRoot = SR_CLUB;
+					mush->stalkRoot = SR_CLUB;
 					break;
 				case 'u':
-					arr[i]->stalkRoot = SR_CUP;
+					mush->stalkRoot = SR_CUP;
 					break;
 				case 'e':
-					arr[i]->stalkRoot = SR_EQUAL;
+					mush->stalkRoot = SR_EQUAL;
 					break;
 				case 'z':
-					arr[i]->stalkRoot = SR_RHIZOMORPHS;
+					mush->stalkRoot = SR_RHIZOMORPHS;
 					break;
 				case 'r':
-					arr[i]->stalkRoot = SR_ROOTED;
+					mush->stalkRoot = SR_ROOTED;
 					break;
 				case '?':
-					arr[i]->stalkRoot = SR_MISSING;
+					mush->stalkRoot = SR_MISSING;
 					break;
 				default:
 					break;
@@ -857,16 +859,16 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'f':
-					arr[i]->stalkSurfaceAboveRing = SSAR_FIBROUS;
+					mush->stalkSurfaceAboveRing = SSAR_FIBROUS;
 					break;
 				case 'y':
-					arr[i]->stalkSurfaceAboveRing = SSAR_SCALLY;
+					mush->stalkSurfaceAboveRing = SSAR_SCALLY;
 					break;
 				case 'k':
-					arr[i]->stalkSurfaceAboveRing = SSAR_SILKY;
+					mush->stalkSurfaceAboveRing = SSAR_SILKY;
 					break;
 				case 's':
-					arr[i]->stalkSurfaceAboveRing = SSAR_SMOOTH;
+					mush->stalkSurfaceAboveRing = SSAR_SMOOTH;
 					break;
 				default:
 					break;
@@ -876,16 +878,16 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'f':
-					arr[i]->stalkSurfaceBelowRing = SSBR_FIBROUS;
+					mush->stalkSurfaceBelowRing = SSBR_FIBROUS;
 					break;
 				case 'y':
-					arr[i]->stalkSurfaceBelowRing = SSBR_SCALLY;
+					mush->stalkSurfaceBelowRing = SSBR_SCALLY;
 					break;
 				case 'k':
-					arr[i]->stalkSurfaceBelowRing = SSBR_SILKY;
+					mush->stalkSurfaceBelowRing = SSBR_SILKY;
 					break;
 				case 's':
-					arr[i]->stalkSurfaceBelowRing = SSBR_SMOOTH;
+					mush->stalkSurfaceBelowRing = SSBR_SMOOTH;
 					break;
 				default:
 					break;
@@ -895,31 +897,31 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'n':
-					arr[i]->stalkColorAboveRing = SCAR_BROWN;
+					mush->stalkColorAboveRing = SCAR_BROWN;
 					break;
 				case 'b':
-					arr[i]->stalkColorAboveRing = SCAR_BUFF;
+					mush->stalkColorAboveRing = SCAR_BUFF;
 					break;
 				case 'c':
-					arr[i]->stalkColorAboveRing = SCAR_CINNAMON;
+					mush->stalkColorAboveRing = SCAR_CINNAMON;
 					break;
 				case 'g':
-					arr[i]->stalkColorAboveRing = SCAR_GRAY;
+					mush->stalkColorAboveRing = SCAR_GRAY;
 					break;
 				case 'o':
-					arr[i]->stalkColorAboveRing = SCAR_ORANGE;
+					mush->stalkColorAboveRing = SCAR_ORANGE;
 					break;
 				case 'p':
-					arr[i]->stalkColorAboveRing = SCAR_PINK;
+					mush->stalkColorAboveRing = SCAR_PINK;
 					break;
 				case 'e':
-					arr[i]->stalkColorAboveRing = SCAR_RED;
+					mush->stalkColorAboveRing = SCAR_RED;
 					break;
 				case 'w':
-					arr[i]->stalkColorAboveRing = SCAR_WHITE;
+					mush->stalkColorAboveRing = SCAR_WHITE;
 					break;
 				case 'y':
-					arr[i]->stalkColorAboveRing = SCAR_YELLOW;
+					mush->stalkColorAboveRing = SCAR_YELLOW;
 					break;
 				default:
 					break;
@@ -929,31 +931,31 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'n':
-					arr[i]->stalkColorBelowRing = SCBR_BROWN;
+					mush->stalkColorBelowRing = SCBR_BROWN;
 					break;
 				case 'b':
-					arr[i]->stalkColorBelowRing = SCBR_BUFF;
+					mush->stalkColorBelowRing = SCBR_BUFF;
 					break;
 				case 'c':
-					arr[i]->stalkColorBelowRing = SCBR_CINNAMON;
+					mush->stalkColorBelowRing = SCBR_CINNAMON;
 					break;
 				case 'g':
-					arr[i]->stalkColorBelowRing = SCBR_GRAY;
+					mush->stalkColorBelowRing = SCBR_GRAY;
 					break;
 				case 'o':
-					arr[i]->stalkColorBelowRing = SCBR_ORANGE;
+					mush->stalkColorBelowRing = SCBR_ORANGE;
 					break;
 				case 'p':
-					arr[i]->stalkColorBelowRing = SCBR_PINK;
+					mush->stalkColorBelowRing = SCBR_PINK;
 					break;
 				case 'e':
-					arr[i]->stalkColorBelowRing = SCBR_RED;
+					mush->stalkColorBelowRing = SCBR_RED;
 					break;
 				case 'w':
-					arr[i]->stalkColorBelowRing = SCBR_WHITE;
+					mush->stalkColorBelowRing = SCBR_WHITE;
 					break;
 				case 'y':
-					arr[i]->stalkColorBelowRing = SCBR_YELLOW;
+					mush->stalkColorBelowRing = SCBR_YELLOW;
 					break;
 				default:
 					break;
@@ -963,10 +965,10 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'p':
-					arr[i]->veilType = VT_PARTIAL;
+					mush->veilType = VT_PARTIAL;
 					break;
 				case 'u':
-					arr[i]->veilType = VT_UNIVERSAL;
+					mush->veilType = VT_UNIVERSAL;
 					break;
 				default:
 					break;
@@ -976,16 +978,16 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'n':
-					arr[i]->veilColor = VC_BROWN;
+					mush->veilColor = VC_BROWN;
 					break;
 				case 'o':
-					arr[i]->veilColor = VC_ORANGE;
+					mush->veilColor = VC_ORANGE;
 					break;
 				case 'w':
-					arr[i]->veilColor = VC_WHITE;
+					mush->veilColor = VC_WHITE;
 					break;
 				case 'y':
-					arr[i]->veilColor = VC_YELLOW;
+					mush->veilColor = VC_YELLOW;
 					break;
 				default:
 					break;
@@ -995,13 +997,13 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'n':
-					arr[i]->ringNumber = RN_NONE;
+					mush->ringNumber = RN_NONE;
 					break;
 				case 'o':
-					arr[i]->ringNumber = RN_ONE;
+					mush->ringNumber = RN_ONE;
 					break;
 				case 't':
-					arr[i]->ringNumber = RN_TWO;
+					mush->ringNumber = RN_TWO;
 				default:
 					break;
 				}
@@ -1010,28 +1012,28 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'c':
-					arr[i]->ringType = RT_COBWEBBY;
+					mush->ringType = RT_COBWEBBY;
 					break;
 				case 'e':
-					arr[i]->ringType = RT_EVANESCENT;
+					mush->ringType = RT_EVANESCENT;
 					break;
 				case 'f':
-					arr[i]->ringType = RT_FLARING;
+					mush->ringType = RT_FLARING;
 					break;
 				case 'l':
-					arr[i]->ringType = RT_LARGE;
+					mush->ringType = RT_LARGE;
 					break;
 				case 'n':
-					arr[i]->ringType = RT_NONE;
+					mush->ringType = RT_NONE;
 					break;
 				case 'p':
-					arr[i]->ringType = RT_PENDANT;
+					mush->ringType = RT_PENDANT;
 					break;
 				case 's':
-					arr[i]->ringType = RT_SHEATHING;
+					mush->ringType = RT_SHEATHING;
 					break;
 				case 'z':
-					arr[i]->ringType = RT_ZONE;
+					mush->ringType = RT_ZONE;
 					break;
 				default:
 					break;
@@ -1041,31 +1043,31 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'k':
-					arr[i]->sporePrintColor = SPC_BLACK;
+					mush->sporePrintColor = SPC_BLACK;
 					break;
 				case 'n':
-					arr[i]->sporePrintColor = SPC_BROWN;
+					mush->sporePrintColor = SPC_BROWN;
 					break;
 				case 'b':
-					arr[i]->sporePrintColor = SPC_BUFF;
+					mush->sporePrintColor = SPC_BUFF;
 					break;
 				case 'h':
-					arr[i]->sporePrintColor = SPC_CHOCOLATE;
+					mush->sporePrintColor = SPC_CHOCOLATE;
 					break;
 				case 'r':
-					arr[i]->sporePrintColor = SPC_GREEN;
+					mush->sporePrintColor = SPC_GREEN;
 					break;
 				case 'o':
-					arr[i]->sporePrintColor = SPC_ORANGE;
+					mush->sporePrintColor = SPC_ORANGE;
 					break;
 				case 'u':
-					arr[i]->sporePrintColor = SPC_PURPLE;
+					mush->sporePrintColor = SPC_PURPLE;
 					break;
 				case 'w':
-					arr[i]->sporePrintColor = SPC_WHITE;
+					mush->sporePrintColor = SPC_WHITE;
 					break;
 				case 'y':
-					arr[i]->sporePrintColor = SPC_YELLOW;
+					mush->sporePrintColor = SPC_YELLOW;
 					break;
 				default:
 					break;
@@ -1075,22 +1077,22 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'a':
-					arr[i]->population = P_ABUNDANT;
+					mush->population = P_ABUNDANT;
 					break;
 				case 'c':
-					arr[i]->population = P_CLUSTERED;
+					mush->population = P_CLUSTERED;
 					break;
 				case 'n':
-					arr[i]->population = P_NUMEROUS;
+					mush->population = P_NUMEROUS;
 					break;
 				case 's':
-					arr[i]->population = P_SCATTERED;
+					mush->population = P_SCATTERED;
 					break;
 				case 'v':
-					arr[i]->population = P_SEVERAL;
+					mush->population = P_SEVERAL;
 					break;
 				case 'y':
-					arr[i]->population = P_SOLITARY;
+					mush->population = P_SOLITARY;
 					break;
 				default:
 					break;
@@ -1100,25 +1102,25 @@ ifstream fInput;
 				switch (tmp[j])
 				{
 				case 'g':
-					arr[i]->habitat = H_GRASSES;
+					mush->habitat = H_GRASSES;
 					break;
 				case 'l':
-					arr[i]->habitat = H_LEAVES;
+					mush->habitat = H_LEAVES;
 					break;
 				case 'm':
-					arr[i]->habitat = H_MEADOW;
+					mush->habitat = H_MEADOW;
 					break;
 				case 'p':
-					arr[i]->habitat = H_PATHS;
+					mush->habitat = H_PATHS;
 					break;
 				case 'u':
-					arr[i]->habitat = H_URBAN;
+					mush->habitat = H_URBAN;
 					break;
 				case 'w':
-					arr[i]->habitat = H_WASTE;
+					mush->habitat = H_WASTE;
 					break;
 				case 'd':
-					arr[i]->habitat = H_WOODS;
+					mush->habitat = H_WOODS;
 					break;
 				default:
 					break;
@@ -1129,6 +1131,7 @@ ifstream fInput;
 			}
 		}
 	}
+	fInput.close();
 
 	return mush;
 }

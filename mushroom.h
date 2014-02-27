@@ -259,4 +259,9 @@ typedef struct{
 
 } input_Mushroom;
 
+typedef struct{
+	float distance;
+	bool isEdible;
+} near_Mushrooms;
+
 #endif

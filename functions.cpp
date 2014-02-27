@@ -6,11 +6,8 @@
 	If the unknown mushroom matches a mushroom exactly then it clames it found a match
 	If there is no match then it checks gainst the nearest 3 and 
 /*/
-bool doKNN(input_Mushroom myMushroom, data_Mushroom** knownMushrooms)
+bool doKNN(input_Mushroom myMushroom, data_Mushroom** knownMushrooms, near_Mushroom** nearNeighors)
 {
-	data_Mushroom	* nearest1 = NULL,
-					* nearest2 = NULL, 
-					* nearest3 = NULL;
 	float tmp, nearest1dist, nearest2dist, nearest3dist;
 	bool isEdible;
 
@@ -25,24 +22,30 @@ bool doKNN(input_Mushroom myMushroom, data_Mushroom** knownMushrooms)
 		}
 		else if (nearest1dist != NULL && tmp <= nearest1dist)
 		{
+			/*/
 			nearest3dist = nearest2dist;
 			nearest3 = nearest2;
 			nearest2dist = nearest1dist;
 			nearest2 = nearest1;
 			nearest1dist = tmp;
 			nearest1 = knownMushrooms[i];
+			/*/
 		}
 		else if (tmp <= nearest2dist)
 		{
+			/*/
 			nearest3dist = nearest2dist;
 			nearest3 = nearest2;
 			nearest2dist = nearest1dist;
 			nearest2 = knownMushrooms[i];
+			/*/
 		}
 		else if (tmp <= nearest3dist)
 		{
+			/*/
 			nearest3dist = nearest2dist;
 			nearest3 = knownMushrooms[i];
+			/*/
 		}
 	}
 	if( (nearest1dist < ((nearest2dist + nearest3dist)/2)- 10) && (nearest1dist != nearest2dist) )

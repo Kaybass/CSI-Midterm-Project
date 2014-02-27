@@ -1,6 +1,6 @@
 #include "knn.h"
 
-float distance(input_Mushroom myMushroom, data_Mushroom *knownMushrooms )
+float euclidDistance(input_Mushroom myMushroom, data_Mushroom *knownMushrooms )
 {
 	return pow(float(pow(float(myMushroom.capShape - knownMushrooms->capShape), 2) +
 				pow(float(myMushroom.capSurface - knownMushrooms->capSurface), 2) +

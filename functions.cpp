@@ -17,7 +17,7 @@ bool doKNN(input_Mushroom myMushroom, data_Mushroom** knownMushrooms)
 	/*/Get the 3 nearest neighbors/*/
 	for (int i = 0; i < sizeof(knownMushrooms); i++)
 	{
-		tmp = euclidDistance(myMushroom, *knownMushrooms[i]);
+		tmp = euclidDistance(myMushroom, knownMushrooms[i]);
 		if ( tmp = 0 )
 		{
 			cout << "MATCH FOUND";

@@ -16,212 +16,223 @@ enum _cap_shape{
 	CSH_CONVEX  = 2,
 	CSH_FLAT    = 3,
 	CSH_KNOBBED = 4,
+<<<<<<< HEAD
 	CSH_SUNKEN  = 5
+=======
+	CSH_SUNKEN = 5,
+	CSH__COUNT = 6
+>>>>>>> 2e6e6ebc55829053721017d40f724af27d8fcf1d
 };
 
 enum _cap_surface{
 
 	CSU_FIBROUS = 0,
-	CSU_GROOVES,
-	CSU_SCALY,
-	CSU_SMOOTH,
-	CSU_CAP_SURFACE_COUNT
+	CSU_GROOVES = 1,
+	CSU_SCALY = 2,
+	CSU_SMOOTH = 3,
+	CSU_CAP_SURFACE_COUNT = 4
 };
 
 enum _cap_color{
 	CC_BROWN = 0,
-	CC_BUFF,
-	CC_CINNAMON,
-	CC_GRAY,
-	CC_GREEN, 
-	CC_PINK,
-	CC_PURPLE,
-	CC_RED,
-	CC_WHITE,
-	CC_YELLOW,
-	CC_COUNT
+	CC_BUFF = 1,
+	CC_CINNAMON = 2,
+	CC_GRAY = 3,
+	CC_GREEN = 4, 
+	CC_PINK = 5,
+	CC_PURPLE = 6,
+	CC_RED = 7,
+	CC_WHITE = 8,
+	CC_YELLOW = 9,
+	CC_COUNT = 10
 };
 
 enum _bruises{
 	B_BRUISED = 0,
-	B_NOT_BRUISED,
-	B_COUNT
+	B_NOT_BRUISED = 1,
+	B_COUNT =2
 };
 
 enum _odor{
 	O_ALMOND = 0,
-	O_ANISE,
-	O_CREOSOTE,
-	O_FISHY,
-	O_FOUL,
-	O_MUSTY,
-	O_NONE,
-	O_PUNGENT,
-	O_SPICE,
-	O_COUNT,
+	O_ANISE = 1,
+	O_CREOSOTE = 2,
+	O_FISHY = 3,
+	O_FOUL = 4,
+	O_MUSTY = 5,
+	O_NONE = 6,
+	O_PUNGENT = 7,
+	O_SPICE = 8,
+	O_COUNT = 9,
 };
 
 enum _gill_attachment{
 	GA_ATTACHED = 0,
-	GA_DECENDING,
-	GA_FREE,
-	GA_NOTCHED,
-	GA_COUNT
+	GA_DECENDING = 1,
+	GA_FREE = 2,
+	GA_NOTCHED = 3,
+	GA_COUNT = 4
 };
 
 enum _gill_spacing{
 	GSP_CLOSE = 0,
-	GSP_CROWDED,
-	GSP_DISTANT,
-	GSP_COUNT
+	GSP_CROWDED = 1,
+	GSP_DISTANT = 2,
+	GSP_COUNT = 3
 };
 
 enum _gill_size{
-	GSI_BROAD,
-	GSI_NARROW,
-	GSI_COUNT
+	GSI_BROAD = 0,
+	GSI_NARROW = 1,
+	GSI_COUNT = 2
 };
 
 enum _gill_color{
-	GC_BLACK,
-	GC_BROWN,
-	GC_BUFF,
-	GC_CHOCOLATE,
-	GC_GRAY,
-	GC_GREEN,
-	GC_ORANGE,
-	GC_PINK,
-	GC_PURPLE,
-	GC_RED,
-	GC_WHITE,
-	GC_YELLOW,
-	GC_COUNT
+	GC_BLACK = 0,
+	GC_BROWN = 1,
+	GC_BUFF = 2,
+	GC_CHOCOLATE = 3,
+	GC_GRAY = 4,
+	GC_GREEN = 5,
+	GC_ORANGE = 6,
+	GC_PINK = 7,
+	GC_PURPLE = 8,
+	GC_RED = 9,
+	GC_WHITE = 10,
+	GC_YELLOW = 11,
+	GC_COUNT = 12
 };
 
 enum _stalk_shape{
-	SS_ENLARGING,
-	SS_TAPERING,
-	SS_COUNT
+	SS_ENLARGING = 0,
+	SS_TAPERING = 1,
+	SS_COUNT = 2
 };
 
 enum _stalk_root{
-	SR_BULBOUS,
-	SR_CLUB,
-	SR_CUP,
-	SR_EQUAL,
-	SR_RHIZOMORPHS,
-	SR_ROOTED,
-	SR_MISSING,
-	SR_COUNT
+	SR_BULBOUS = 0,
+	SR_CLUB = 1,
+	SR_CUP = 2,
+	SR_EQUAL = 3,
+	SR_RHIZOMORPHS = 4,
+	SR_ROOTED = 5,
+	SR_MISSING =6,
+	SR_COUNT =7
 };
 
 enum _stalk_surface_above_ring{
-	SSAR_FIBROUS,
-	SSAR_SCALLY,
-	SSAR_SILKY,
-	SSAR_SMOOTH,
-	SSAR_COUNT
+	SSAR_FIBROUS = 0,
+	SSAR_SCALLY = 1,
+	SSAR_SILKY = 2,
+	SSAR_SMOOTH = 3,
+	SSAR_COUNT =4
 };
 
 enum _stalk_surface_below_ring{
-	SSBR_FIBROUS,
-	SSBR_SCALLY,
-	SSBR_SILKY,
-	SSBR_SMOOTH,
-	SSBR_COUNT
+	SSBR_FIBROUS = 0,
+	SSBR_SCALLY = 1,
+	SSBR_SILKY = 2,
+	SSBR_SMOOTH = 3,
+	SSBR_COUNT = 4
 };
 
 enum _stalk_color_above_ring{
 	SCAR_BROWN = 0,
-	SCAR_BUFF,
-	SCAR_CINNAMON,
-	SCAR_GRAY,
-	SCAR_ORANGE, 
-	SCAR_PINK,
-	SCAR_RED,
-	SCAR_WHITE,
-	SCAR_YELLOW,
-	SCAR_COUNT
+	SCAR_BUFF = 1,
+	SCAR_CINNAMON = 2,
+	SCAR_GRAY = 3,
+	SCAR_ORANGE = 4, 
+	SCAR_PINK = 5,
+	SCAR_RED = 6,
+	SCAR_WHITE = 7,
+	SCAR_YELLOW = 8,
+	SCAR_COUNT = 9
 };
 
 enum _stalk_color_below_ring{
 	SCBR_BROWN = 0,
-	SCBR_BUFF,
-	SCBR_CINNAMON,
-	SCBR_GRAY,
-	SCBR_ORANGE, 
-	SCBR_PINK,
-	SCBR_RED,
-	SCBR_WHITE,
-	SCBR_YELLOW,
-	SCBR_COUNT
+	SCBR_BUFF = 1,
+	SCBR_CINNAMON = 2,
+	SCBR_GRAY = 3,
+	SCBR_ORANGE = 4, 
+	SCBR_PINK = 5,
+	SCBR_RED = 6,
+	SCBR_WHITE = 7,
+	SCBR_YELLOW = 8,
+	SCBR_COUNT = 9
 };
 
 enum _veil_type{
+<<<<<<< HEAD
 	VT_PARTIAL,
 	VT_UNIVERSAL,
 	VT_COUNT
+=======
+	VT_PARTIAL = 0,
+	VT_TAPERING = 1,
+	VT_COUNT = 2
+>>>>>>> 2e6e6ebc55829053721017d40f724af27d8fcf1d
 };
 
 enum _veil_color{
-	VC_BROWN,
-	VC_ORANGE,
-	VC_WHITE,
-	VC_YELLOW,
-	VC_COUNT
+	VC_BROWN = 0,
+	VC_ORANGE = 1,
+	VC_WHITE = 2,
+	VC_YELLOW = 3,
+	VC_COUNT = 4
 };
 
 enum _ring_number{
-	RN_NONE,
-	RN_ONE,
-	RN_TWO,
-	RN_COUNT
+	RN_NONE = 0,
+	RN_ONE = 1,
+	RN_TWO = 2,
+	RN_COUNT =3
 };
 
 enum _ring_type{
-	RT_COBWEBBY,
-	RT_EVANESCENT,
-	RT_FLARING,
-	RT_LARGE,
-	RT_NONE,
-	RT_PENDANT,
-	RT_SHEATHING,
-	RT_ZONE,
-	RT_COUNT
+	RT_COBWEBBY = 0,
+	RT_EVANESCENT = 1,
+	RT_FLARING = 2,
+	RT_LARGE =3,
+	RT_NONE = 4,
+	RT_PENDANT = 5,
+	RT_SHEATHING = 6,
+	RT_ZONE = 7,
+	RT_COUNT = 8
 };
 
 enum _spore_print_color{
-	SPC_BLACK,
-	SPC_BROWN,
-	SPC_BUFF,
-	SPC_CHOCOLATE,
-	SPC_GREEN,
-	SPC_ORANGE,
-	SPC_PURPLE,
-	SPC_WHITE,
-	SPC_YELLOW,
-	SPC_COUNT
+	SPC_BLACK = 0,
+	SPC_BROWN = 1,
+	SPC_BUFF = 2,
+	SPC_CHOCOLATE = 3,
+	SPC_GREEN = 4,
+	SPC_ORANGE = 5,
+	SPC_PURPLE = 6,
+	SPC_WHITE = 7,
+	SPC_YELLOW = 8,
+	SPC_COUNT = 9
 };
 
 enum _population{
-	P_ABUNDANT,
-	P_CLUSTERED,
-	P_NUMEROUS,
-	P_SCATTERED,
-	P_SEVERAL,
-	P_SOLITARY,
-	P_COUNT
+	P_ABUNDANT = 0,
+	P_CLUSTERED = 1,
+	P_NUMEROUS = 2,
+	P_SCATTERED = 3,
+	P_SEVERAL = 4,
+	P_SOLITARY = 5,
+	P_COUNT = 6
 };
 
 enum _habitat{
-	H_GRASSES,
-	H_LEAVES,
-	H_MEADOW,
-	H_PATHS,
-	H_URBAN,
-	H_WASTE,
-	H_WOODS,
-	H_COUNT
+	H_GRASSES = 0,
+	H_LEAVES = 1,
+	H_MEADOW = 2,
+	H_PATHS = 3,
+	H_URBAN = 4,
+	H_WASTE = 5,
+	H_WOODS = 6,
+	H_COUNT = 7
 };
 
 typedef struct{

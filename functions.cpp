@@ -1,5 +1,44 @@
 #include "Header.h"
 
+
+bool doKNN(const input_Mushroom& myMushroom, data_Mushroom** knownMushrooms)
+{
+	data_Mushroom nearest1, nearest2, nearest3;
+	float tmp, nearest1dist, nearest2dist, nearest3dist;
+
+	/*/Get the 3 nearest neighbors/*/
+	for (int i = 0; i < sizeof(knownMushrooms); i++)
+	{
+		tmp = euclidDistance(myMushroom, *knownMushrooms[i]);
+		if ( tmp = 0 )
+		{
+			cout << "MATCH FOUND";
+			return (knownMushrooms[i]->isEdible);
+		}
+		else if (tmp <= nearest1dist)
+		{
+			nearest3dist = nearest2dist;
+			nearest3 = nearest2;
+			nearest2dist = nearest1dist;
+			nearest2 = nearest1;
+			nearest1dist = tmp;
+			nearest1 = *knownMushrooms[i];
+		}
+		else if (tmp <= nearest2dist)
+		{
+			nearest3dist = nearest2dist;
+			nearest3 = nearest2;
+			nearest2dist = nearest1dist;
+			nearest2 = *knownMushrooms[i];
+		}
+		else if (tmp <= nearest3dist)
+		{
+			nearest3dist = nearest2dist;
+			nearest3 = *knownMushrooms[i];
+		}
+	}
+}
+
 bool getContinue()
 {
 	string answer;

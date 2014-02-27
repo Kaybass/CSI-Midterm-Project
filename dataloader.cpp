@@ -570,6 +570,7 @@ data_Mushroom  ** loadData(string filename, int numInstances = MAX_INSTANCES)
 					break;
 				}
 			}
+			i++;
 		}
 	}
 

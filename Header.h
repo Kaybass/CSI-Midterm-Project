@@ -17,7 +17,7 @@ enum _options {
 	OPT_COUNT
 };
 
-bool doKNN(input_Mushroom checkMushrooms, data_Mushroom**  knownMushrooms);
+bool doKNN(input_Mushroom checkMushrooms, data_Mushroom** knownMushrooms);
 
 bool getContinue();
 

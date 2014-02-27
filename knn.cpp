@@ -31,14 +31,6 @@ double euclidDistance(input_Mushroom *myMushroom, data_Mushroom *knownMushrooms 
 
 bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int length)
 {
-	/*/ I DON'T THINK WE NEED THESE /*/
-	/*
-	data_Mushroom ** dArr = new data_Mushroom*[myMushroom->kNum];
-
-	double* iArr = new double[myMushroom->kNum];
-
-	int*    indArr = new int[myMushroom->kNum];
-	*/
 
 	bool bP = true;
 
@@ -100,10 +92,5 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 		bP = true;
 
 	delete [] nArr;
-	/*
-	delete [] dArr;
-	delete [] iArr;
-	delete [] indArr;
-	*/
 	return bP;
 }

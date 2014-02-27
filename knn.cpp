@@ -42,7 +42,7 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 
 	for (int h = 0; h < size; h++)
 	{
-		nArr[h].distance = _I32_MAX;
+		nArr[h].distance = INT_MAX;
 	}
 
 	for(int i = 0; i < length; i++)
@@ -51,7 +51,7 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 		curEdible = knownMushrooms[i]->isEdible;
 		if (curDist == 0)
 		{
-		//	return !curEdible;
+			return !curEdible;
 		}
 		else
 		{
@@ -98,4 +98,76 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 
 	delete [] nArr;
 	return bP;
+}
+
+
+bool getIsAccruacy(input_Mushroom *checkMushroom, data_Mushroom** knownMushrooms, int length, data_Mushroom* checkAgainst)
+{
+	bool bP = true;
+
+	double curDist = 0, tmpDist = 0;
+	bool curEdible, tmpEdible;
+	int poi = 0, edib = 0, size;
+	size = checkMushroom->kNum;
+	near_Mushrooms * nArr = new near_Mushrooms[size];
+
+	for (int h = 0; h < size; h++)
+	{
+		nArr[h].distance = _I32_MAX;
+	}
+
+	for(int i = 0; i < length; i++)
+	{
+		curDist = euclidDistance(checkMushroom,knownMushrooms[i]);
+		curEdible = knownMushrooms[i]->isEdible;
+		if (curDist == 0)
+		{
+			/*/ DO NOTHING HERE /*/
+		}
+		else
+		{
+			for(int j = 0; j < checkMushroom->kNum; j++)
+			{
+				if (nArr[j].distance > curDist)
+				{
+					tmpDist = nArr[j].distance;
+					tmpEdible = nArr[j].isEdible;
+					nArr[j].distance = curDist;
+					nArr[j].isEdible = curEdible;
+					curDist = tmpDist;
+					curEdible = tmpEdible;
+				}
+				/*/ ONLY RUN IF EDIBLE /*/
+				else if (nArr[j].distance == curDist && nArr[j].isEdible)
+				{
+					tmpDist = nArr[j].distance;
+					tmpEdible = nArr[j].isEdible;
+					nArr[j].distance = curDist;
+					nArr[j].isEdible = curEdible;
+					curDist = tmpDist;
+					curEdible = tmpEdible;
+				}
+			}
+		}
+	}
+
+	/*/ get mode poison value /*/
+
+	for (int k = 0; k < checkMushroom->kNum; k++)
+	{
+		if (nArr[k].isEdible)
+			++edib;
+		else
+			++poi;
+	}
+
+	if (edib > poi)
+		bP = false;
+
+	else
+		bP = true;
+
+	delete [] nArr;
+
+	return (bP = checkAgainst->isEdible);
 }

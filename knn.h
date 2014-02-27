@@ -13,6 +13,7 @@
 #ifndef __KNN__
 #define __KNN__
 
+#include <climits>
 #include <math.h>
 #include "mushroom.h"
 
@@ -24,6 +25,8 @@ using namespace std;
  *	Post   : Know if mushroom has poison
 */
 bool isPoison(input_Mushroom *checkMushrooms, data_Mushroom** knownMushrooms, int length);
+
+bool getIsAccruacy(input_Mushroom *checkMushroom, data_Mushroom** knownMushrooms, int length, data_Mushroom* checkAgainst);
 
 /*
  *	Pre    : Have two mushroom

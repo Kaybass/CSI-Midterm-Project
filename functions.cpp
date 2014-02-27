@@ -3,6 +3,57 @@
 
 using namespace std;
 
+
+
+float getAccuracy()
+{
+	int instances = MAX_INSTANCES, numAccurate = 0;
+	float accuracy;
+
+	data_Mushroom** checkAgainst = NULL;
+	input_Mushroom* checkFor = NULL;
+
+	checkAgainst = loadData("agaricus-lepiota.data.csv", instances);
+
+
+	for (int i = 0; i < instances; i++)
+	{
+		checkFor->kNum = 3;
+		checkFor->bruises = checkAgainst[i]->bruises;
+		checkFor->capColor = checkAgainst[i]->capColor;
+		checkFor->capShape = checkAgainst[i]->capShape;
+		checkFor->capSurface = checkAgainst[i]->capSurface;
+		checkFor->gillAttachment = checkAgainst[i]->gillAttachment;
+		checkFor->gillColor = checkAgainst[i]->gillColor;
+		checkFor->gillSize = checkAgainst[i]->gillSize;
+		checkFor->gillSpacing = checkAgainst[i]->gillSpacing;
+		checkFor->habitat = checkAgainst[i]->habitat;
+		checkFor->odor = checkAgainst[i]->odor;
+		checkFor->population = checkAgainst[i]->population;
+		checkFor->ringNumber = checkAgainst[i]->ringNumber;
+		checkFor->ringType = checkAgainst[i]->ringType;
+		checkFor->sporePrintColor = checkAgainst[i]->sporePrintColor;
+		checkFor->stalkColorAboveRing = checkAgainst[i]->stalkColorAboveRing;
+		checkFor->stalkColorBelowRing = checkAgainst[i]->stalkColorBelowRing;
+		checkFor->stalkRoot = checkAgainst[i]->stalkRoot;
+		checkFor->stalkShape = checkAgainst[i]->stalkShape;
+		checkFor->stalkSurfaceAboveRing = checkAgainst[i]->stalkSurfaceAboveRing;
+		checkFor->stalkSurfaceBelowRing = checkAgainst[i]->stalkSurfaceBelowRing;
+		checkFor->veilColor = checkAgainst[i]->veilColor;
+		checkFor->veilType = checkAgainst[i]->veilType; 
+		for (int j = 0; j < instances; j++)
+		{
+			if ( getIsAccurate( checkFor, checkAgainst, instances, checkAgainst[j] ) )
+				++numAccurate;
+		}
+	}
+	accuracy = (numAccurate / instances);
+	return accuracy;
+}
+
+
+
+
 int timeAlgorithm(std::string filename)
 {
 	cout.setf(ios::fixed | ios::showpoint);

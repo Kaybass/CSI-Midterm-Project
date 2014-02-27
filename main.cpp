@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void main(int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int cont;
 
@@ -11,4 +11,6 @@ void main(int argc, char **argv)
 		cont = timeAlgorithm("input1.txt");
 
 	} while(cont == 0);
+
+	return 0;
 }

@@ -4,6 +4,9 @@
 #include <math.h>
 #include "mushroom.h"
 
-float euclidDistance(input_Mushroom myMushroom, data_Mushroom *knownMushrooms);
+
+bool isPoison(input_Mushroom *checkMushrooms, data_Mushroom** knownMushrooms, int length);
+
+float euclidDistance(input_Mushroom *myMushroom, data_Mushroom *knownMushrooms);
 
 #endif

@@ -585,7 +585,6 @@ input_Mushroom * loadInput(std::string filename = "input1.txt")
 
 	fInput.open(filename);
 
-	int i = 0;
 	string tmp;
 
 	input_Mushroom * mush = new input_Mushroom;

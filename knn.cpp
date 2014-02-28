@@ -101,7 +101,7 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 }
 
 
-bool getIsAccruacy(input_Mushroom *checkMushroom, data_Mushroom** knownMushrooms, int length, data_Mushroom* checkAgainst)
+bool getIsAccurate(input_Mushroom *checkMushroom, data_Mushroom** knownMushrooms, int length, data_Mushroom* checkAgainst)
 {
 	bool bP = true;
 

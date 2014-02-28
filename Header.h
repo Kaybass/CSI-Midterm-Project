@@ -32,5 +32,6 @@ using namespace std;
 int timeAlgorithm(std::string filename);
 
 float getAccuracy();
+void printAccuracy();
 
 #endif

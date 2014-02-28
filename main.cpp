@@ -6,6 +6,8 @@ int main(int argc, char **argv)
 {
 	int cont;
 
+	printAccuracy();
+
 	do
 	{
 		cont = timeAlgorithm("input1.txt");

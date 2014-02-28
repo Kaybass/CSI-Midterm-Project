@@ -26,7 +26,7 @@ using namespace std;
 */
 bool isPoison(input_Mushroom *checkMushrooms, data_Mushroom** knownMushrooms, int length);
 
-bool getIsAccruacy(input_Mushroom *checkMushroom, data_Mushroom** knownMushrooms, int length, data_Mushroom* checkAgainst);
+bool getIsAccurate(input_Mushroom *checkMushroom, data_Mushroom** knownMushrooms, int length, data_Mushroom* checkAgainst);
 
 /*
  *	Pre    : Have two mushroom

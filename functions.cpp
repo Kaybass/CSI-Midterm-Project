@@ -13,6 +13,8 @@ float getAccuracy()
 	data_Mushroom** checkAgainst = NULL;
 	input_Mushroom* checkFor = NULL;
 
+	checkFor = new input_Mushroom;
+
 	checkAgainst = loadData("agaricus-lepiota.data.csv", instances);
 
 
@@ -41,17 +43,23 @@ float getAccuracy()
 		checkFor->stalkSurfaceBelowRing = checkAgainst[i]->stalkSurfaceBelowRing;
 		checkFor->veilColor = checkAgainst[i]->veilColor;
 		checkFor->veilType = checkAgainst[i]->veilType; 
-		for (int j = 0; j < instances; j++)
+		for (int j = 0; j < MED_INSTANCES; j++)
 		{
-			if ( getIsAccurate( checkFor, checkAgainst, instances, checkAgainst[j] ) )
+			if ( getIsAccurate( checkFor, checkAgainst, MED_INSTANCES, checkAgainst[j] ) )
 				++numAccurate;
 		}
 	}
-	accuracy = (numAccurate / instances);
+	delete checkFor;
+	delete [] *checkAgainst;
+	accuracy = (numAccurate / (instances * MED_INSTANCES));
 	return accuracy;
 }
 
 
+void printAccuracy()
+{
+	cout << "Accuracy is " << getAccuracy();
+}
 
 
 int timeAlgorithm(std::string filename)

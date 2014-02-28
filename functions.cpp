@@ -18,7 +18,7 @@ float getAccuracy()
 	checkAgainst = loadData("agaricus-lepiota.data.csv", instances);
 
 
-	for (int i = 0; i < instances; i++)
+	for (int i = MED_INSTANCES + 1; i < instances; i++)
 	{
 		checkFor->kNum = 3;
 		checkFor->bruises = checkAgainst[i]->bruises;
@@ -43,22 +43,19 @@ float getAccuracy()
 		checkFor->stalkSurfaceBelowRing = checkAgainst[i]->stalkSurfaceBelowRing;
 		checkFor->veilColor = checkAgainst[i]->veilColor;
 		checkFor->veilType = checkAgainst[i]->veilType; 
-		for (int j = 0; j < MED_INSTANCES; j++)
-		{
-			if ( getIsAccurate( checkFor, checkAgainst, MED_INSTANCES, checkAgainst[j] ) )
-				++numAccurate;
-		}
+		if ( getIsAccurate( checkFor, checkAgainst, MED_INSTANCES, checkAgainst[i] ) )
+			++numAccurate;\
 	}
 	delete checkFor;
 	delete [] *checkAgainst;
-	accuracy = (numAccurate / (instances * MED_INSTANCES));
+	accuracy = (100 * (float(numAccurate) / float(MAX_INSTANCES - MED_INSTANCES)));
 	return accuracy;
 }
 
 
 void printAccuracy()
 {
-	cout << "Accuracy is " << getAccuracy();
+	cout << "Accuracy is " << getAccuracy() << "\n\a";
 }
 
 

@@ -97,7 +97,7 @@ bool isPoison(input_Mushroom *myMushroom, data_Mushroom** knownMushrooms, int le
 		bP = true;
 
 	delete [] nArr;
-	return bP;
+	return !bP;
 }
 
 
@@ -169,5 +169,5 @@ bool getIsAccurate(input_Mushroom *checkMushroom, data_Mushroom** knownMushrooms
 
 	delete [] nArr;
 
-	return (bP = checkAgainst->isEdible);
+	return !(bP = checkAgainst->isEdible);
 }

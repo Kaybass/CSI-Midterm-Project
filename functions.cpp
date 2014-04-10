@@ -18,7 +18,7 @@ float getAccuracy()
 	checkAgainst = loadData("agaricus-lepiota.data.csv", instances);
 
 
-	for (int i = MED_INSTANCES + 1; i < instances; i++)
+	for (int i = 0; i < MAX_INSTANCES; i+=2)
 	{
 		checkFor->kNum = 3;
 		checkFor->bruises = checkAgainst[i]->bruises;
